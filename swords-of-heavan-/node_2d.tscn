@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://0erkbkdoi3jh"]
+
+[ext_resource type="Texture2D" uid="uid://jfva8dsqn218" path="res://ART/Joan main scene prototype.jpg" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://ct7kfmsihl4il" path="res://ART/Text bubble prototype.png" id="2_epypp"]
+
+[node name="Node2D" type="Node2D" unique_id=924023022]
+
+[node name="scene 1 joan bg" type="Sprite2D" parent="." unique_id=1845341738]
+position = Vector2(575, 318)
+scale = Vector2(0.7375, 0.54833335)
+texture = ExtResource("1_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="scene 1 joan bg" unique_id=2026681748]
+position = Vector2(-6.779688, 266.26138)
+scale = Vector2(0.93389827, 0.76443774)
+texture = ExtResource("2_epypp")
