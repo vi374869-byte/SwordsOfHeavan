@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dimn88fgv506h"
-path="res://.godot/imported/Joan ptt pixel character .png-f13d4156a42dc7de42ca6a0664344ec0.ctex"
+uid="uid://bse5fg4u4q2f1"
+path="res://.godot/imported/bubble_ch1_1.png-0149c1ff7652e1c61b5499fe59e3da43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ART/prototypes junk/Joan ptt pixel character .png"
-dest_files=["res://.godot/imported/Joan ptt pixel character .png-f13d4156a42dc7de42ca6a0664344ec0.ctex"]
+source_file="res://ART/game/bubble_ch1_1.png"
+dest_files=["res://.godot/imported/bubble_ch1_1.png-0149c1ff7652e1c61b5499fe59e3da43.ctex"]
 
 [params]
 

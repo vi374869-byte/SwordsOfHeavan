@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jfva8dsqn218"
-path="res://.godot/imported/Joan main scene prototype.jpg-5bc64bd8c435a5b9ea5477b4cf92a8fa.ctex"
+path="res://.godot/imported/Joan main scene prototype.jpg-3c9d974d3d9e2231643251c3af740f41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ART/Joan main scene prototype.jpg"
-dest_files=["res://.godot/imported/Joan main scene prototype.jpg-5bc64bd8c435a5b9ea5477b4cf92a8fa.ctex"]
+source_file="res://ART/prototypes junk/Joan main scene prototype.jpg"
+dest_files=["res://.godot/imported/Joan main scene prototype.jpg-3c9d974d3d9e2231643251c3af740f41.ctex"]
 
 [params]
 
