@@ -1,12 +1,12 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene format=3 uid="uid://opjts4fgknd6"]
 
-[ext_resource type="Script" path="res://scenes/chapter1_intro.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://ART/game/ch1_1.png" id="2_img1"]
-[ext_resource type="Texture2D" path="res://ART/game/bubble_ch1_1.png" id="3_bub1"]
-[ext_resource type="Texture2D" path="res://ART/game/ch1_2.png" id="4_img2"]
-[ext_resource type="Texture2D" path="res://ART/game/bubble_ch1_2.png" id="5_bub2"]
+[ext_resource type="Script" uid="uid://byesek7chonrn" path="res://scenes/chapter1_intro.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://b0ylvo7gaetx0" path="res://ART/game/ch1_1.png" id="2_img1"]
+[ext_resource type="Texture2D" uid="uid://bse5fg4u4q2f1" path="res://ART/game/bubble_ch1_1.png" id="3_bub1"]
+[ext_resource type="Texture2D" uid="uid://b1bytn03fkkfi" path="res://ART/game/ch1_2.png" id="4_img2"]
+[ext_resource type="Texture2D" uid="uid://8qvs0ibregrw" path="res://ART/game/bubble_ch1_2.png" id="5_bub2"]
 
-[node name="Chapter1Intro" type="Control"]
+[node name="Chapter1Intro" type="Control" unique_id=745379514]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,17 +16,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_script")
 
-[node name="Background" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(1, 1, 1, 1)
-
-[node name="Page1" type="Control" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=643535158]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,7 +25,16 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Image" type="TextureRect" parent="Page1"]
+[node name="Page1" type="Control" parent="." unique_id=1504549302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Image" type="TextureRect" parent="Page1" unique_id=1217769446]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,8 +46,9 @@ texture = ExtResource("2_img1")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Bubble" type="TextureRect" parent="Page1"]
+[node name="Bubble" type="TextureRect" parent="Page1" unique_id=695619079]
 layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.15
 anchor_top = 0.62
 anchor_right = 0.85
@@ -60,7 +60,7 @@ texture = ExtResource("3_bub1")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Page2" type="Control" parent="."]
+[node name="Page2" type="Control" parent="." unique_id=1524214238]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,7 +69,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Image" type="TextureRect" parent="Page2"]
+[node name="Image" type="TextureRect" parent="Page2" unique_id=498061447]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,8 +81,9 @@ texture = ExtResource("4_img2")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Bubble" type="TextureRect" parent="Page2"]
+[node name="Bubble" type="TextureRect" parent="Page2" unique_id=1507049673]
 layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.15
 anchor_top = 0.62
 anchor_right = 0.85
