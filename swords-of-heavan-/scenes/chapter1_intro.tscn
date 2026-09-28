@@ -5,6 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://bse5fg4u4q2f1" path="res://ART/game/bubble_ch1_1.png" id="3_bub1"]
 [ext_resource type="Texture2D" uid="uid://b1bytn03fkkfi" path="res://ART/game/ch1_2.png" id="4_img2"]
 [ext_resource type="Texture2D" uid="uid://8qvs0ibregrw" path="res://ART/game/bubble_ch1_2.png" id="5_bub2"]
+[ext_resource type="Texture2D" path="res://ART/game/ch1_3.png" id="img3"]
+[ext_resource type="Texture2D" path="res://ART/game/bubble_ch1_3.png" id="bub3"]
+[ext_resource type="Texture2D" path="res://ART/game/ch1_4.png" id="img4"]
+[ext_resource type="Texture2D" path="res://ART/game/bubble_ch1_4.png" id="bub4"]
+[ext_resource type="Texture2D" path="res://ART/game/ch1_5.png" id="img5"]
+[ext_resource type="Texture2D" path="res://ART/game/bubble_ch1_5.png" id="bub5"]
+[ext_resource type="Texture2D" path="res://ART/game/ch1_6.png" id="img6"]
+[ext_resource type="Texture2D" path="res://ART/game/bubble_ch1_6.png" id="bub6"]
+[ext_resource type="Texture2D" path="res://ART/game/ch1_7.png" id="img7"]
+[ext_resource type="Texture2D" path="res://ART/game/ch1_8.png" id="img8"]
 
 [node name="Chapter1Intro" type="Control" unique_id=745379514]
 layout_mode = 3
@@ -92,5 +102,187 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 texture = ExtResource("5_bub2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Page3" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Image" type="TextureRect" parent="Page3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("img3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bubble" type="TextureRect" parent="Page3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.62
+anchor_right = 0.85
+anchor_bottom = 0.97
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("bub3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Page4" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Image" type="TextureRect" parent="Page4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("img4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bubble" type="TextureRect" parent="Page4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.62
+anchor_right = 0.85
+anchor_bottom = 0.97
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("bub4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Page5" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Image" type="TextureRect" parent="Page5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("img5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bubble" type="TextureRect" parent="Page5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.62
+anchor_right = 0.85
+anchor_bottom = 0.97
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("bub5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Page6" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Image" type="TextureRect" parent="Page6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("img6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bubble" type="TextureRect" parent="Page6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.62
+anchor_right = 0.85
+anchor_bottom = 0.97
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("bub6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Page7" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Image" type="TextureRect" parent="Page7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("img7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Page8" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Image" type="TextureRect" parent="Page8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("img8")
 expand_mode = 1
 stretch_mode = 5
