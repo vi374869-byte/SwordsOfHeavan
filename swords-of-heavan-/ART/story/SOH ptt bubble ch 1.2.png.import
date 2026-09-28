@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0g70lbxr4gce"
-path="res://.godot/imported/SOH ptt bubble.png-ca4a02a350d7f69f5c231bae9fda5000.ctex"
+uid="uid://bxqoeljn7lwxy"
+path="res://.godot/imported/SOH ptt bubble ch 1.2.png-d120fb7f89496c246256635b1fe36201.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ART/oficial prototype/SOH ptt bubble.png"
-dest_files=["res://.godot/imported/SOH ptt bubble.png-ca4a02a350d7f69f5c231bae9fda5000.ctex"]
+source_file="res://ART/story/SOH ptt bubble ch 1.2.png"
+dest_files=["res://.godot/imported/SOH ptt bubble ch 1.2.png-d120fb7f89496c246256635b1fe36201.ctex"]
 
 [params]
 

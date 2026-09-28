@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxqoeljn7lwxy"
-path="res://.godot/imported/SOH ptt bubble ch 1.2.png-873567a2629b5c0b99fd803b5eb2fb54.ctex"
+uid="uid://bnq5mvv88urcr"
+path="res://.godot/imported/SOH webcomic ch 2.1.png-1b198cf1ffe6eb189901851bbd6c9f76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ART/oficial prototype/SOH ptt bubble ch 1.2.png"
-dest_files=["res://.godot/imported/SOH ptt bubble ch 1.2.png-873567a2629b5c0b99fd803b5eb2fb54.ctex"]
+source_file="res://ART/webcomic soh/SOH webcomic ch 2.1.png"
+dest_files=["res://.godot/imported/SOH webcomic ch 2.1.png-1b198cf1ffe6eb189901851bbd6c9f76.ctex"]
 
 [params]
 
