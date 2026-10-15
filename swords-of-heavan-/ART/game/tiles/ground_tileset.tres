@@ -1,6 +1,6 @@
-[gd_resource type="TileSet" load_steps=3 format=3]
+[gd_resource type="TileSet" format=3 uid="uid://dufct15epa4et"]
 
-[ext_resource type="Texture2D" path="res://ART/game/tiles/ground_sheet.png" id="1_sheet"]
+[ext_resource type="Texture2D" uid="uid://chjunpsnkfwvr" path="res://ART/game/tiles/ground_sheet.png" id="1_sheet"]
 
 [sub_resource type="TileSetAtlasSource" id="GroundAtlas"]
 resource_name = "ground"
