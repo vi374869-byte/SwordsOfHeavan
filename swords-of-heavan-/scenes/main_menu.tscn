@@ -60,9 +60,9 @@ texture = ExtResource("2_bg")
 
 [node name="Title" type="TextureRect" parent="Canvas"]
 layout_mode = 0
-offset_left = 67.0
+offset_left = 34.0
 offset_top = 8.0
-offset_right = 1999.0
+offset_right = 1966.0
 offset_bottom = 274.0
 mouse_filter = 2
 texture = ExtResource("3_title")

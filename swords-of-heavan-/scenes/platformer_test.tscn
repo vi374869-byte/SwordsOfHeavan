@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene format=3 uid="uid://bbwyncwi24lft"]
 
-[ext_resource type="Script" path="res://scenes/platformer_test.gd" id="1_level"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="2_player"]
-[ext_resource type="Texture2D" path="res://ART/oficial prototype/Joan_player_soh_2 FRONT.png" id="3_front"]
-[ext_resource type="Texture2D" path="res://ART/oficial prototype/Joan_player_soh SIDE.png" id="4_side"]
-
-[sub_resource type="RectangleShape2D" id="FloorShape"]
-size = Vector2(8000, 400)
+[ext_resource type="Script" uid="uid://0x74w5mreb1s" path="res://scenes/platformer_test.gd" id="1_level"]
+[ext_resource type="Script" uid="uid://crigw8aejnlwd" path="res://scripts/player.gd" id="2_player"]
+[ext_resource type="Texture2D" uid="uid://b6tptfyijgyys" path="res://ART/oficial prototype/Joan_player_soh_2 FRONT.png" id="3_front"]
+[ext_resource type="Texture2D" uid="uid://e8os1ub6d2qi" path="res://ART/oficial prototype/Joan_player_soh SIDE.png" id="4_side"]
+[ext_resource type="TileSet" path="res://ART/game/tiles/ground_tileset.tres" id="5_tiles"]
 
 [sub_resource type="RectangleShape2D" id="PlayerShape"]
 size = Vector2(80, 188)
@@ -27,13 +25,13 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="PlatformerTest" type="Node2D"]
+[node name="PlatformerTest" type="Node2D" unique_id=193521711]
 script = ExtResource("1_level")
 
-[node name="Sky" type="CanvasLayer" parent="."]
+[node name="Sky" type="CanvasLayer" parent="." unique_id=28420239]
 layer = -1
 
-[node name="SkyColor" type="ColorRect" parent="Sky"]
+[node name="SkyColor" type="ColorRect" parent="Sky" unique_id=296089427]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -42,51 +40,36 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.53, 0.79, 0.95, 1)
 
-[node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(576, 700)
+[node name="Ground" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AADx/wMAAAAAAAAAAADx/wQAAAABAAAAAADy/wMAAAAAAAAAAADy/wQAAAABAAAAAADz/wMAAAAAAAAAAADz/wQAAAABAAAAAAD0/wMAAAAAAAAAAAD0/wQAAAABAAAAAAD1/wMAAAAAAAAAAAD1/wQAAAABAAAAAAD2/wMAAAAAAAAAAAD2/wQAAAABAAAAAAD3/wMAAAAAAAAAAAD3/wQAAAABAAAAAAD4/wMAAAAAAAAAAAD4/wQAAAABAAAAAAD5/wMAAAAAAAAAAAD5/wQAAAABAAAAAAD6/wMAAAAAAAAAAAD6/wQAAAABAAAAAAD7/wMAAAAAAAAAAAD7/wQAAAABAAAAAAD8/wMAAAAAAAAAAAD8/wQAAAABAAAAAAD9/wMAAAAAAAAAAAD9/wQAAAABAAAAAAD+/wMAAAAAAAAAAAD+/wQAAAABAAAAAAD//wMAAAAAAAAAAAD//wQAAAABAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAABAAAAAAABAAMAAAAAAAAAAAABAAQAAAABAAAAAAACAAMAAAAAAAAAAAACAAQAAAABAAAAAAADAAMAAAAAAAAAAAADAAQAAAABAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAABAAAAAAAFAAMAAAAAAAAAAAAFAAQAAAABAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAABAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAABAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAABAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAABAAAAAAAKAAMAAAAAAAAAAAAKAAQAAAABAAAAAAALAAMAAAAAAAAAAAALAAQAAAABAAAAAAAMAAMAAAAAAAAAAAAMAAQAAAABAAAAAAANAAMAAAAAAAAAAAANAAQAAAABAAAAAAAOAAMAAAAAAAAAAAAOAAQAAAABAAAAAAAPAAMAAAAAAAAAAAAPAAQAAAABAAAAAAAQAAMAAAAAAAAAAAAQAAQAAAABAAAAAAARAAMAAAAAAAAAAAARAAQAAAABAAAAAAASAAMAAAAAAAAAAAASAAQAAAABAAAAAAATAAMAAAAAAAAAAAATAAQAAAABAAAAAAAUAAMAAAAAAAAAAAAUAAQAAAABAAAAAAAVAAMAAAAAAAAAAAAVAAQAAAABAAAAAAAWAAMAAAAAAAAAAAAWAAQAAAABAAAAAAAXAAMAAAAAAAAAAAAXAAQAAAABAAAAAAAYAAMAAAAAAAAAAAAYAAQAAAABAAAAAAAZAAMAAAAAAAAAAAAZAAQAAAABAAAAAAAaAAMAAAAAAAAAAAAaAAQAAAABAAAAAAAbAAMAAAAAAAAAAAAbAAQAAAABAAAAAAAcAAMAAAAAAAAAAAAcAAQAAAABAAAAAAAdAAMAAAAAAAAAAAAdAAQAAAABAAAAAAAeAAMAAAAAAAAAAAAeAAQAAAABAAAAAAAfAAMAAAAAAAAAAAAfAAQAAAABAAAAAAAgAAMAAAAAAAAAAAAgAAQAAAABAAAAAAAhAAMAAAAAAAAAAAAhAAQAAAABAAAAAAAiAAMAAAAAAAAAAAAiAAQAAAABAAAAAAAjAAMAAAAAAAAAAAAjAAQAAAABAAAAAAAkAAMAAAAAAAAAAAAkAAQAAAABAAAAAAAlAAMAAAAAAAAAAAAlAAQAAAABAAAAAAAmAAMAAAAAAAAAAAAmAAQAAAABAAAAAAAnAAMAAAAAAAAAAAAnAAQAAAABAAAAAAAoAAMAAAAAAAAAAAAoAAQAAAABAAAAAAA=")
+tile_set = ExtResource("5_tiles")
 
-[node name="Collision" type="CollisionShape2D" parent="Floor"]
-shape = SubResource("FloorShape")
-
-[node name="Ground" type="ColorRect" parent="Floor"]
-offset_left = -4000.0
-offset_top = -200.0
-offset_right = 4000.0
-offset_bottom = 200.0
-mouse_filter = 2
-color = Color(0.3, 0.27, 0.32, 1)
-
-[node name="GroundEdge" type="ColorRect" parent="Floor"]
-offset_left = -4000.0
-offset_top = -200.0
-offset_right = 4000.0
-offset_bottom = -184.0
-mouse_filter = 2
-color = Color(0.16, 0.14, 0.18, 1)
-
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1115565755]
 position = Vector2(576, 380)
 script = ExtResource("2_player")
 front_texture = ExtResource("3_front")
 side_texture = ExtResource("4_side")
 
-[node name="Sprite" type="Sprite2D" parent="Player"]
+[node name="Sprite" type="Sprite2D" parent="Player" unique_id=1316789502]
 texture_filter = 1
+position = Vector2(-12, 2)
 scale = Vector2(4, 4)
 texture = ExtResource("3_front")
 
-[node name="Collision" type="CollisionShape2D" parent="Player"]
+[node name="Collision" type="CollisionShape2D" parent="Player" unique_id=200081780]
 position = Vector2(0, 2)
 shape = SubResource("PlayerShape")
 
-[node name="Camera" type="Camera2D" parent="Player"]
+[node name="Camera" type="Camera2D" parent="Player" unique_id=1235787546]
 offset = Vector2(0, -60)
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1376216400]
 
-[node name="BackButton" type="Button" parent="UI"]
+[node name="BackButton" type="Button" parent="UI" unique_id=5053779]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -99,11 +82,11 @@ focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("ButtonStyle")
-theme_override_styles/hover = SubResource("ButtonStyle")
 theme_override_styles/pressed = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
 text = "Back to story"
 
-[node name="Hint" type="Label" parent="UI"]
+[node name="Hint" type="Label" parent="UI" unique_id=365133356]
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 600.0
