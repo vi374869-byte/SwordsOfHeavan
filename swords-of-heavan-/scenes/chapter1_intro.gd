@@ -3,11 +3,13 @@ extends Control
 ## Every child node named "Page..." is one page (an Image + an optional Bubble).
 ## Pages play in the order they appear in the Scene tree.
 ## Click or press Enter/Space to fade to the next page. Esc goes back to the menu.
+## Clicking on the last page ends the story: progress resets and you return to the menu.
 ## Progress is saved through the SaveGame autoload (scripts/save_game.gd).
 ## To add a page: duplicate the last Page, rename it (e.g. Page9), swap its textures.
 
 const FADE_TIME := 0.6
 const MENU_SCENE := "res://scenes/main_menu.tscn"
+const PLATFORMER_SCENE := "res://scenes/platformer_test.tscn" # debug
 
 var pages: Array[Control] = []
 var index := 0
@@ -18,11 +20,17 @@ func _ready() -> void:
 	for child in get_children():
 		if child is Control and String(child.name).begins_with("Page"):
 			pages.append(child)
+	# Debug button in the top-right corner (it's drawn on top because it's the last child).
+	$PlatformerButton.pressed.connect(_open_platformer)
 	if pages.is_empty():
 		return
 
 	# Continue from the saved page (page 0 the first time).
-	index = clampi(SaveGame.page_for(scene_file_path), 0, pages.size() - 1)
+	# A save sitting on the last page means the story was finished, so start over.
+	var saved := SaveGame.page_for(scene_file_path)
+	if saved >= pages.size() - 1:
+		saved = 0
+	index = clampi(saved, 0, pages.size() - 1)
 	for i in pages.size():
 		pages[i].visible = (i == index)
 		pages[i].modulate.a = 1.0
@@ -37,7 +45,8 @@ func _ready() -> void:
 	t.tween_callback(_finish)
 
 
-func _input(event: InputEvent) -> void:
+# _unhandled_input (not _input) so clicking the Platformer button doesn't also turn the page.
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().change_scene_to_file(MENU_SCENE)
 		return
@@ -50,7 +59,8 @@ func _input(event: InputEvent) -> void:
 
 func advance() -> void:
 	if index + 1 >= pages.size():
-		return # end of the test scene
+		_finish_story()
+		return
 	busy = true
 	var old_page: Control = pages[index]
 	index += 1
@@ -80,6 +90,19 @@ func advance() -> void:
 # Returns the page's "Bubble" node, or null if the page is picture-only.
 func _bubble_of(page: Control) -> CanvasItem:
 	return page.get_node_or_null("Bubble") as CanvasItem
+
+
+# End of the story: reset progress so Play starts from page 1, then fade to the menu.
+func _finish_story() -> void:
+	busy = true
+	SaveGame.reset_progress()
+	var t := create_tween()
+	t.tween_property(self, "modulate:a", 0.0, FADE_TIME)
+	t.tween_callback(get_tree().change_scene_to_file.bind(MENU_SCENE))
+
+
+func _open_platformer() -> void:
+	get_tree().change_scene_to_file(PLATFORMER_SCENE)
 
 
 func _finish() -> void:

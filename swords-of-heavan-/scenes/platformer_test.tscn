@@ -1,0 +1,113 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scenes/platformer_test.gd" id="1_level"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_player"]
+[ext_resource type="Texture2D" path="res://ART/oficial prototype/Joan_player_soh_2 FRONT.png" id="3_front"]
+[ext_resource type="Texture2D" path="res://ART/oficial prototype/Joan_player_soh SIDE.png" id="4_side"]
+
+[sub_resource type="RectangleShape2D" id="FloorShape"]
+size = Vector2(8000, 400)
+
+[sub_resource type="RectangleShape2D" id="PlayerShape"]
+size = Vector2(80, 188)
+
+[sub_resource type="StyleBoxFlat" id="ButtonStyle"]
+content_margin_left = 14.0
+content_margin_top = 8.0
+content_margin_right = 14.0
+content_margin_bottom = 8.0
+bg_color = Color(0.13, 0.19, 0.33, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="PlatformerTest" type="Node2D"]
+script = ExtResource("1_level")
+
+[node name="Sky" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="SkyColor" type="ColorRect" parent="Sky"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.53, 0.79, 0.95, 1)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(576, 700)
+
+[node name="Collision" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("FloorShape")
+
+[node name="Ground" type="ColorRect" parent="Floor"]
+offset_left = -4000.0
+offset_top = -200.0
+offset_right = 4000.0
+offset_bottom = 200.0
+mouse_filter = 2
+color = Color(0.3, 0.27, 0.32, 1)
+
+[node name="GroundEdge" type="ColorRect" parent="Floor"]
+offset_left = -4000.0
+offset_top = -200.0
+offset_right = 4000.0
+offset_bottom = -184.0
+mouse_filter = 2
+color = Color(0.16, 0.14, 0.18, 1)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(576, 380)
+script = ExtResource("2_player")
+front_texture = ExtResource("3_front")
+side_texture = ExtResource("4_side")
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("3_front")
+
+[node name="Collision" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 2)
+shape = SubResource("PlayerShape")
+
+[node name="Camera" type="Camera2D" parent="Player"]
+offset = Vector2(0, -60)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="BackButton" type="Button" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -196.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 60.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("ButtonStyle")
+theme_override_styles/hover = SubResource("ButtonStyle")
+theme_override_styles/pressed = SubResource("ButtonStyle")
+text = "Back to story"
+
+[node name="Hint" type="Label" parent="UI"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 600.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.1, 0.12, 0.2, 1)
+theme_override_font_sizes/font_size = 18
+text = "DEBUG  |  Walk: A/D or arrows   Jump: Space/W/Up   Esc: back"
