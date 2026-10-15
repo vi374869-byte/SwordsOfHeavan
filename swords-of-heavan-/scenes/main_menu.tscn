@@ -1,0 +1,172 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://ART/game/menu/menu_bg.png" id="2_bg"]
+[ext_resource type="Texture2D" path="res://ART/game/menu/menu_title.png" id="3_title"]
+[ext_resource type="Texture2D" path="res://ART/game/menu/btn_play.png" id="4_play"]
+[ext_resource type="Texture2D" path="res://ART/game/menu/btn_settings.png" id="5_settings"]
+[ext_resource type="Texture2D" path="res://ART/game/menu/btn_quit.png" id="6_quit"]
+
+[sub_resource type="StyleBoxFlat" id="PanelStyle"]
+content_margin_left = 28.0
+content_margin_top = 24.0
+content_margin_right = 28.0
+content_margin_bottom = 24.0
+bg_color = Color(0.13, 0.19, 0.33, 0.96)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Fill" type="TextureRect" parent="."]
+modulate = Color(0.55, 0.55, 0.6, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Canvas" type="Control" parent="."]
+layout_mode = 0
+offset_right = 2000.0
+offset_bottom = 1800.0
+mouse_filter = 2
+
+[node name="Art" type="TextureRect" parent="Canvas"]
+layout_mode = 0
+offset_right = 2000.0
+offset_bottom = 1800.0
+mouse_filter = 2
+texture = ExtResource("2_bg")
+
+[node name="Title" type="TextureRect" parent="Canvas"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 8.0
+offset_right = 1999.0
+offset_bottom = 274.0
+mouse_filter = 2
+texture = ExtResource("3_title")
+
+[node name="PlayButton" type="TextureButton" parent="Canvas"]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 433.0
+offset_right = 1192.0
+offset_bottom = 563.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_play")
+
+[node name="SettingsButton" type="TextureButton" parent="Canvas"]
+layout_mode = 0
+offset_left = 597.0
+offset_top = 620.0
+offset_right = 1106.0
+offset_bottom = 698.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_settings")
+
+[node name="QuitButton" type="TextureButton" parent="Canvas"]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 768.0
+offset_right = 969.0
+offset_bottom = 841.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_quit")
+
+[node name="SettingsLayer" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="SettingsLayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="Panel" type="PanelContainer" parent="SettingsLayer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -170.0
+offset_right = 220.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("PanelStyle")
+
+[node name="VBox" type="VBoxContainer" parent="SettingsLayer/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="SettingsLayer/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="FullscreenCheck" type="CheckButton" parent="SettingsLayer/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Fullscreen"
+
+[node name="VolumeRow" type="HBoxContainer" parent="SettingsLayer/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="VolumeLabel" type="Label" parent="SettingsLayer/Panel/VBox/VolumeRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="SettingsLayer/Panel/VBox/VolumeRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+value = 100.0
+
+[node name="RestartButton" type="Button" parent="SettingsLayer/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Restart story"
+
+[node name="BackButton" type="Button" parent="SettingsLayer/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Back"

@@ -2,10 +2,12 @@ extends Control
 ## Chapter 1 intro (test).
 ## Every child node named "Page..." is one page (an Image + an optional Bubble).
 ## Pages play in the order they appear in the Scene tree.
-## Click or press Enter/Space to fade to the next page.
+## Click or press Enter/Space to fade to the next page. Esc goes back to the menu.
+## Progress is saved through the SaveGame autoload (scripts/save_game.gd).
 ## To add a page: duplicate the last Page, rename it (e.g. Page9), swap its textures.
 
 const FADE_TIME := 0.6
+const MENU_SCENE := "res://scenes/main_menu.tscn"
 
 var pages: Array[Control] = []
 var index := 0
@@ -19,12 +21,13 @@ func _ready() -> void:
 	if pages.is_empty():
 		return
 
-	# Only the first page is shown when the game starts.
+	# Continue from the saved page (page 0 the first time).
+	index = clampi(SaveGame.page_for(scene_file_path), 0, pages.size() - 1)
 	for i in pages.size():
-		pages[i].visible = (i == 0)
+		pages[i].visible = (i == index)
 		pages[i].modulate.a = 1.0
 
-	var first_bubble := _bubble_of(pages[0])
+	var first_bubble := _bubble_of(pages[index])
 	if first_bubble == null:
 		return
 	first_bubble.modulate.a = 0.0
@@ -35,6 +38,9 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_file(MENU_SCENE)
+		return
 	if busy:
 		return
 	var clicked: bool = event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT
@@ -48,6 +54,7 @@ func advance() -> void:
 	busy = true
 	var old_page: Control = pages[index]
 	index += 1
+	SaveGame.set_progress(scene_file_path, index)
 	var new_page: Control = pages[index]
 	var old_bubble := _bubble_of(old_page)
 	var new_bubble := _bubble_of(new_page)
